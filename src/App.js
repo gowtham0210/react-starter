@@ -1,13 +1,19 @@
-
+import react from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './pages/Home';
+import Navbar from './Navbar';
+import Raise_ticket from './pages/Raise_ticket';
 
 
 function App() {
   return (
-    <div className="App">
-      <p className="text-3xl text-red font-bold underline">
-       Hello world!
-      </p>
-    </div>
+    <BrowserRouter>
+    <Navbar />
+      <Routes>
+          <Route path='/home' element={<Home />} />
+          <Route path='/raise-ticket' element={<Raise_ticket />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
